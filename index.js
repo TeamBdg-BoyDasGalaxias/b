@@ -47,8 +47,8 @@ const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
 const arrayBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
 const bulan = arrayBulan[moment().format('MM') - 1]
 const config = {
-    XBOT: 'TeamBdg BOT', 
-    instagram: 'https://www.instagram.com/kaic_de_paula?r=nametag', 
+    XBOT: 'teambdg', 
+    instagram: 'https://bit.ly/3e7ze4h', 
     nomer: 'wa.me/5511941791973',
     youtube: 'https://bit.ly/2Nl1x6w', 
     whatsapp: 'Comming soon', 
@@ -117,7 +117,7 @@ client.on('group-participants-update', async (anu) => {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `Tchau pessoa @${num.split('@')[0]} quem sabe um dia você possa voltar`
+				teks = `sayonara pessoa @${num.split('@')[0]} quem sabe possa voltar`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			}
@@ -214,16 +214,7 @@ client.on('group-participants-update', async (anu) => {
 				case 'donate':
 					client.sendMessage(from, donasi(), text)
 				break
-				case 'ajuda':
-					client.sendMessage(from, ajuda(), text)
-				break
 				case 'info':
-					client.sendMessage(from, info(), text)
-				break
-				case 'suporte':
-					client.sendMessage(from, suporte(), text)
-				break
-				case 'infobot':
 					me = client.user
 					uptime = process.uptime()
 					teks = `nome do bot : ${me.name}\n*numero do bot* : @${me.jid.split('@')[0]}\n*sigla dos comandos* : ${prefix}\nnumeros bloqueados : ${blocked.length}\no bot esta ativo desde : ${kyun(uptime)}\n`
@@ -402,18 +393,6 @@ case 'lofi':
 						reply('Escolha a foto para pegar os txt dela ${prefix} >-<')
 					}
 					break
-					case 'midia':
-					client.sendMessage(from, midia(), text)
-				break
-				case 'adm':
-					client.sendMessage(from, adm(), text)
-				break
-				case 'extra':
-					client.sendMessage(from, extra(), text)
-				break
-				case 'criador':
-					client.sendMessage(from, criador(), text)
-				break
 				case 'stiker': 
 				case 'sticker':
 				case 'fig':
@@ -516,7 +495,7 @@ case 'lofi':
 				pesan2 = arg.split('|')[2] 
                 reply(pesan, isi, pesan2)
 					break	
-                    case 'delete':
+                                case 'delete':
 					case 'del':
 					if (!isGroup)return reply(mess.only.group)
                                         if (!isUser) return reply(mess.only.daftarB)
@@ -658,7 +637,8 @@ case 'lofi':
             case 'admin':
             case 'owner':
             case 'creator':
-                        case 'bdg':
+            case 'criador':
+            case 'itachi':
                   client.sendMessage(from, {displayname: "amor♥️", vcard: vcard}, MessageType.contact, { quoted: mek})
        client.sendMessage(from, 'Este é o número do meu criador ^-^ raja não fdp ',MessageType.text, { quoted: mek} )
            break    
@@ -668,7 +648,7 @@ case 'lofi':
 			    if (!isGroupAdmins) return reply(mess.only.admin)
 				if (!isBotGroupAdmins) return reply(mess.only.Badmin)
                 client.groupUpdateSubject(from, `${body.slice(9)}`)
-                client.sendMessage(from, 'nome do grupo alterado com sucesso', text, {quoted: mek})
+                client.sendMessage(from, 'nome do grupo alterado cm sucesso', text, {quoted: mek})
                 break
                 case 'setdesc':
                 case 'mudardesc':
@@ -676,7 +656,7 @@ case 'lofi':
 			    if (!isGroupAdmins) return reply(mess.only.admin)
 				if (!isBotGroupAdmins) return reply(mess.only.Badmin)
                 client.groupUpdateDescription(from, `${body.slice(9)}`)
-                client.sendMessage(from, 'descrição trocada cm sucesso', text, {quoted: mek})
+                client.sendMessage(from, 'descricao trocada cm sucesso', text, {quoted: mek})
                 break
            case 'demote':
            case 'rebaixar':
@@ -694,7 +674,7 @@ case 'lofi':
 						mentions(teks, mentioned, true)
 						client.groupDemoteAdmin(from, mentioned)
 					} else {
-						mentions(`não mamou o bonde direitinho tem que perde o adm @${mentioned[0].split('@')[0]} 🏃`, mentioned, true)
+						mentions(`nao mamou o bonde direitinho perde adm @${mentioned[0].split('@')[0]} seu gay`, mentioned, true)
 						client.groupDemoteAdmin(from, mentioned)
 					}
 					break
@@ -708,13 +688,13 @@ case 'lofi':
 					if (mentioned.length > 1) {
 						teks = ''
 						for (let _ of mentioned) {
-							teks += `novo adm fml esse(a) mamou o bonde pra ser ADM :\n`
+							teks += `novo adm fml esse mamou o bonde pra ser ADM :\n`
 							teks += `@_.split('@')[0]`
 						}
 						mentions(teks, mentioned, true)
 						client.groupMakeAdmin(from, mentioned)
 					} else {
-						mentions(`novo adm sem escandalo @${mentioned[0].split('@')[0]} esse(a) mamou o bonde pra ser ADM`, mentioned, true)
+						mentions(`novo adm fml sem escandalo @${mentioned[0].split('@')[0]} esse mamou o bonde pra ser ADM`, mentioned, true)
 						client.groupMakeAdmin(from, mentioned)
 					}
 					break	
@@ -751,10 +731,7 @@ case 'lofi':
 					}
 					mentions(teks, groupAdmins, true)
 					break
-					case 'grupos':
-					client.sendMessage(from, grupos(), text)
-				break
-				case 'img':
+				case 'toimg':
 				case 'converter':
 					if (!isQuotedSticker) return reply('marca a fig inteligente')
 					reply(mess.wait)
@@ -765,7 +742,7 @@ case 'lofi':
 						fs.unlinkSync(media)
 						if (err) return reply('algo de erro ;(, tente dnovo dps ^_^')
 						buffer = fs.readFileSync(ran)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Pronto entt '})
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'tchau entt '})
 						fs.unlinkSync(ran)
 					})
 					break
@@ -808,7 +785,7 @@ case 'lofi':
 				case 'clone':
 				case 'clonar':
 					if (!isGroup) return reply(mess.only.group)
-					if (!isOwner) return reply(' *Se apresente com nome é foto!*') 
+					if (!isOwner) return reply(' *quem e tu? ?') 
 					if (args.length < 1) return reply(' *TAG do membro clonada!* ')
 					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag cvk')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
