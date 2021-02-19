@@ -34,7 +34,7 @@ const vcard = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n' 
             + 'FN:Affis Admin\n' 
             + 'ORG: Pengembang XBot;\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=5511941791973:+55 11 94179-1973\n' 
+            + 'TEL;type=CELL;type=VOICE;waid=5511941791973:+55 11 941791973\n' 
             + 'END:VCARD' 
 prefix = '!'
 blocked = []          
@@ -47,10 +47,10 @@ const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
 const arrayBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
 const bulan = arrayBulan[moment().format('MM') - 1]
 const config = {
-    XBOT: 'teambdg', 
-    instagram: 'https://bit.ly/3e7ze4h', 
+    XBOT: 'KALF BOT', 
+    instagram: 'https://www.instagram.com/kaic_de_paula?r=nametag', 
     nomer: 'wa.me/5511941791973',
-    youtube: 'https://bit.ly/2Nl1x6w', 
+    youtube: 'https://youtube.com/channel/UC2a7N-vZ5xrDF-0nfcaUspw', 
     whatsapp: 'Comming soon', 
     tanggal: `TANGGAL: ${moment().format('DD')} ${bulan} ${moment().format('YYYY')}`,
     waktu: time
@@ -163,7 +163,7 @@ client.on('group-participants-update', async (anu) => {
 					ownerG: '❬❗❭ COMANDO EXCLUSIVO PARA O BDG.❬❗❭ ',
 					ownerB: '❬❗❭  COMANDO EXCLUSIVO PARA O BDG.❬❗❭  ',
 					admin: ' ❬ ⚠️ ❭ COMANDO PERMITIDO SOMENTE PARA ADMS ❬ ⚠️ ❭ ',
-					Badmin: '❬❗❭O BOT PRECISA SER ADM ;3 '
+					Badmin: '❬❗❭O BOT PRECISA SER ADEMAR ;3 '
 				}
 			}
 
@@ -638,7 +638,7 @@ case 'lofi':
             case 'owner':
             case 'creator':
             case 'criador':
-            case 'itachi':
+            case 'bdg':
                   client.sendMessage(from, {displayname: "amor♥️", vcard: vcard}, MessageType.contact, { quoted: mek})
        client.sendMessage(from, 'Este é o número do meu criador ^-^ raja não fdp ',MessageType.text, { quoted: mek} )
            break    
@@ -668,7 +668,7 @@ case 'lofi':
 					if (mentioned.length > 1) {
 						teks = ''
 						for (let _ of mentioned) {
-							teks += `nao mamou  o bonde direitinho perde ADM seu gay :\n`
+							teks += `nao mamou  o bonde direitinho perde ADM :\n`
 							teks += `@_.split('@')[0]`
 						}
 						mentions(teks, mentioned, true)
